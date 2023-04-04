@@ -13,5 +13,5 @@ void swap(int *px, int *py)
 	temp = *px;
 	*px = *py;
 	*py = temp;
-	printf("Arg 1 is now: %d\nArg2 is now: %d\n", *px, *py);
+	printf("arg1 is now: %d\narg2 is now: %d\n", *px, *py);
 }
