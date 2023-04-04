@@ -17,7 +17,8 @@ int main(void)
 
 	ip = &x;	/* ip now points to x */
 	y = *ip;	/* y is now 1 */
-	*ip = 0;	/* x is now 0 */
+	*ip = 0;	/* x is now 0 - dereferencing - manipulating the value
+	stored */
 	ip = &z[0];	/* ip now points to z[0] */
 
 	return (0);
