@@ -22,7 +22,7 @@ int main(void)
 	printf("The value of z is the value of x incremented: %d\n", z);
 
 	/* Parenthesis in (*ip)++ is important because uninary operators
-	 * like * and ++ associate right to lef */
+	 * like * and ++ associate right to left */
 		
 	return (0);
 }
