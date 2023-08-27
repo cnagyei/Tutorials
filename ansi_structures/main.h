@@ -32,6 +32,8 @@ struct rect
  * struct point makepoint - point from x and y components
  * @x: point x
  * @y: point y
+ *
+ * Return: temp
  */
 struct point makepoint(int x, int y)
 {

@@ -21,6 +21,7 @@ int main(void)
 
 	/* declare a screen */
 	struct rect screen;
+
 	screen.pt1.x = 500;
 	screen.pt1.y = 30;
 	printf("point 1 x: %d and point 1 y: %d\n", screen.pt1.x, screen.pt1.y);
