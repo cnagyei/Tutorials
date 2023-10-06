@@ -18,7 +18,7 @@ int main(int ac, char **av)
 
 	printf("$ ");
 	line = getline(&buffer, &n, stdin);
-	printf("%s\n", buffer);
+	printf("%s", buffer);
 	printf("Number of characters read: %lu\n", line);
 
 	free(buffer);
