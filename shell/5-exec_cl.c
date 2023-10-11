@@ -9,7 +9,7 @@
 int main(int ac, char **av)
 {
 	printf("Before execve\n");
-	if (execve(av[0], av, NULL) != -1)
+	if (execve(av[1], av, NULL) != -1)
 	{
 		perror("Error: ");
 	}
