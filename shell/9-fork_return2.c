@@ -22,11 +22,11 @@ int main(void)
 	printf("My pid is: %u\n", my_pid);
 	if (child_pid == 0)
 	{
-		printf("(%u) Nooooooo!\n", my_pid);
+		printf("(%u) Nooooooo! [Child running this process)\n", my_pid);
 	}
 	else
 	{
-		printf("(%u) %u, I am your father\n", my_pid, child_pid);
+		printf("(%u) %u, I am your father [Parent running this] \n", my_pid, child_pid);
 	}
 
 	return (0);
