@@ -22,14 +22,23 @@ int main(void)
 	if (child_pid == 0)
 	{
 		printf("Wait for me, wait for me\n");
-		sleep(10);
+		sleep(3);
 	}
 	else
 	{
 		wait(&status);
 		printf("oh, it's all better now\n");
 	}
-	
+
+	/* check if child terminated normally */
+	printf("%d\n", WIFEXITED(status));
+	if (WIFEXITED(status))
+		printf("Terminated normally\n");
+
+	/* check if child was terminated by a signal */
+	printf("%d\n", WIFSIGNALED(status));
+
+	/* inspect the wstatus stored in 'int status' */
 	printf("%d\n", status);
 	return (0);
 }
