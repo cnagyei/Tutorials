@@ -12,23 +12,31 @@
 int main(int ac, char **av)
 {
 	pid_t child_pid;
-	int wstatus;
+	int wstatus, i = 0;
 
 	if (ac == 1)
 		exit(EXIT_SUCCESS);
 
-	do
+	child_pid = fork();
+	if (child_pid == -1)
 	{
-		child_pid = fork();
-		if (child_pid == -1)
-		{
-			perror("fork");
-			exit(EXIT_FAILURE);
-		}
-	} while (WIFEXITED(wstatus));
+		perror("fork");
+		exit(EXIT_FAILURE);
+	}
 	
-	if (execve(av[1], av, NULL) == -1)
-		perror("Error: ");
+	if (child_pid == 0)
+		for (i = 0; i < 5; i++)
+		{
+			printf("Hello\n");
+			if (execve(av[1], av, NULL) == -1)
+				perror("Error: ");
+			printf("Hello\n");
+		}
+	else
+	{
+		wait(&wstatus);
+		printf("Parent: all's good now\n");
+	}
 	
 	return (0);
 }
